@@ -23,9 +23,14 @@ const timer = setInterval(() => {
     if (progress >= 100) {
         clearInterval(timer);
 
-        setTimeout(() => {
-            progressText.textContent = "Welcome to NOVA, Jasmeet.";
-        }, 800);
+     setTimeout(() => {
+
+    const user = localStorage.getItem("novaUser");
+
+    if (user) {
+        window.location.href = "console.html";
+    } else {
+        window.location.href = "setup.html";
     }
 
 }, 800);
