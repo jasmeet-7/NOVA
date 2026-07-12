@@ -1,42 +1,94 @@
-/* ===========================
-   NOVA Boot Screen
-=========================== */
-
-.boot-screen{
-    display:none;
-    margin-top:30px;
-    text-align:left;
-    background:rgba(0,0,0,.35);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:15px;
-    padding:20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#bootText{
-    color:#73cfff;
-    font-family:'Courier New', monospace;
-    font-size:15px;
-    line-height:1.8;
-    white-space:pre-wrap;
-    min-height:170px;
+body {
+    min-height: 100vh;
+    background: #030712;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
-#enterButton{
-    display:none;
-    width:100%;
-    margin-top:20px;
-    padding:15px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:600;
-    color:#fff;
-    background:linear-gradient(90deg,#00b4ff,#6b5cff);
-    transition:.3s;
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at top, #1e3a8a, transparent 40%),
+        radial-gradient(circle at bottom, #7c3aed, transparent 40%),
+        #030712;
+    z-index: -1;
 }
 
-#enterButton:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 20px rgba(0,180,255,.4);
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.glass-card {
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.version {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #60a5fa;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 70px;
+    margin: 20px 0;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.description {
+    margin: 20px 0;
+    color: #cbd5e1;
+}
+
+.status {
+    margin: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
 }
