@@ -1,41 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOVA Boot</title>
+// ==========================
+// NOVA v1.1
+// Landing Page Script
+// Powered by FlowPilott
+// ==========================
 
-    <link rel="stylesheet" href="style.css">
+const wakeButton = document.getElementById("wakeButton");
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+if (wakeButton) {
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+    wakeButton.addEventListener("click", function () {
 
-<body>
+        wakeButton.textContent = "INITIALIZING...";
+        wakeButton.disabled = true;
 
-<div class="background"></div>
+        setTimeout(function () {
+            window.location.href = "./boot.html";
+        }, 1500);
 
-<main class="hero">
+    });
 
-    <div class="glass-card">
-
-        <h1>NOVA</h1>
-
-        <h2>INITIALIZING...</h2>
-
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-
-        <p id="progressText">Starting NOVA...</p>
-
-    </div>
-
-</main>
-
-<script src="boot.js"></script>
-
-</body>
-</html>
+}
