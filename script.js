@@ -1,22 +1,21 @@
-// ==========================
-// NOVA v1.1
-// Landing Page Script
-// Powered by FlowPilott
-// ==========================
+document.addEventListener("DOMContentLoaded", () => {
 
-const wakeButton = document.getElementById("wakeButton");
+    const wakeButton = document.getElementById("wakeButton");
 
-if (wakeButton) {
+    if (!wakeButton) {
+        console.error("Wake button not found!");
+        return;
+    }
 
-    wakeButton.addEventListener("click", function () {
+    wakeButton.addEventListener("click", () => {
 
         wakeButton.textContent = "INITIALIZING...";
         wakeButton.disabled = true;
 
-        setTimeout(function () {
-            window.location.href = "./boot.html";
+        setTimeout(() => {
+            window.location.assign("./boot.html");
         }, 1500);
 
     });
 
-}
+});
