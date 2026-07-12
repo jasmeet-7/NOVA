@@ -1,207 +1,42 @@
-/* NOVA v1.0 */
+/* ===========================
+   NOVA Boot Screen
+=========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#060b16;
-    color:white;
-    min-height:100vh;
-    overflow:hidden;
-}
-
-.background{
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top,#173a72 0%,transparent 45%),
-    radial-gradient(circle at bottom right,#43206d 0%,transparent 35%),
-    #060b16;
-
-    animation:bgMove 8s ease-in-out infinite alternate;
-}
-
-@keyframes bgMove{
-    from{
-        transform:scale(1);
-    }
-    to{
-        transform:scale(1.08);
-    }
-}
-
-.hero{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+.boot-screen{
+    display:none;
+    margin-top:30px;
+    text-align:left;
+    background:rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
     padding:20px;
 }
 
-.glass-card{
-
-    width:100%;
-    max-width:520px;
-
-    padding:45px 35px;
-
-    border-radius:28px;
-
-    text-align:center;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    backdrop-filter:blur(18px);
-
-    box-shadow:0 0 35px rgba(0,180,255,.2);
-
-}
-
-.version{
-
+#bootText{
     color:#73cfff;
-
-    font-size:13px;
-
-    letter-spacing:3px;
-
-    margin-bottom:18px;
-
+    font-family:'Courier New', monospace;
+    font-size:15px;
+    line-height:1.8;
+    white-space:pre-wrap;
+    min-height:170px;
 }
 
-h1{
-
-    font-family:'Orbitron',sans-serif;
-
-    font-size:58px;
-
-}
-
-h2{
-
-    margin-top:10px;
-
-    color:#9dd8ff;
-
-    font-weight:500;
-
-}
-
-.description{
-
-    margin-top:22px;
-
-    line-height:1.7;
-
-    color:#d7e8ff;
-
-}
-
-.status{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin:30px 0;
-
-    font-weight:600;
-
-}
-
-.dot{
-
-    width:12px;
-
-    height:12px;
-
-    border-radius:50%;
-
-    background:#00ff88;
-
-    box-shadow:0 0 15px #00ff88;
-
-    animation:pulse 1.2s infinite;
-
-}
-
-@keyframes pulse{
-
-    50%{
-
-        transform:scale(1.4);
-
-        opacity:.4;
-
-    }
-
-}
-
-#wakeButton{
-
+#enterButton{
+    display:none;
+    width:100%;
+    margin-top:20px;
+    padding:15px;
     border:none;
-
-    cursor:pointer;
-
-    padding:16px 42px;
-
     border-radius:50px;
-
-    font-size:17px;
-
+    cursor:pointer;
+    font-size:16px;
     font-weight:600;
-
-    color:white;
-
+    color:#fff;
     background:linear-gradient(90deg,#00b4ff,#6b5cff);
-
-    transition:.35s;
-
+    transition:.3s;
 }
 
-#wakeButton:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 0 25px rgba(0,180,255,.45);
-
-}
-
-@media(max-width:600px){
-
-    h1{
-
-        font-size:42px;
-
-    }
-
-    h2{
-
-        font-size:18px;
-
-    }
-
-    .glass-card{
-
-        padding:35px 25px;
-
-    }
-
-    #wakeButton{
-
-        width:100%;
-
-    }
-
+#enterButton:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(0,180,255,.4);
 }
